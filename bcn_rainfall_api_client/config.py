@@ -23,21 +23,13 @@ class Config(BaseConfig):
     @cached_property
     def get_api_settings(self) -> APIClientSettings:
         """
-        Return both FastAPI settings and Uvicorn server settings to run FastAPI app.
+        Return settings to build base API URL to communicate with using client.
 
         Example:
         {
-            "fastapi": {
-                "debug": True,
-                "root_path": "/api",
-                "title": "Barcelona Rainfall API",
-                "summary": "An API that provides rainfall-related data of the city of Barcelona.",
-            },
-            "server": {
-                "host": "127.0.0.1",
-                "port": 8000,
-                "reload": True,
-            },
+            "host": "127.0.0.1",
+            "port": 8000,
+            "root_path": "/api",
         }
 
         """

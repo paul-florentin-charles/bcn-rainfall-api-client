@@ -11,17 +11,17 @@ class APIClient(APISession):
     @classmethod
     def from_config(
         cls,
-        config_: APIClientSettings | None = None,
+        cfg: APIClientSettings | None = None,
         *,
         path="config.yml",
         **kwargs,
     ):
-        if config_ is None:
+        if cfg is None:
             from bcn_rainfall_api_client.config import Config
 
-            config_ = Config(path=path).get_api_settings
+            cfg = Config(path=path).get_api_settings
 
-        base_url = f"http://{config_.host}:{config_.port}{config_.root_path}"
+        base_url = f"http://{cfg.host}:{cfg.port}{cfg.root_path}"
 
         return cls(base_url, **kwargs)
 

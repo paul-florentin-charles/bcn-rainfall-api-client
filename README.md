@@ -21,7 +21,7 @@ api_clt_with_path = APIClient.from_config(path="new/path/to/config.yml")
 
 # With your own configuration
 api_clt_with_cfg = APIClient.from_config(
-    config_=APIClientSettings(host="localhost", port=8080, root_path="/api")
+    cfg=APIClientSettings(host="localhost", port=8080, root_path="/api")
 )
 
 # Have fun with client!

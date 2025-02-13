@@ -2,14 +2,13 @@
 Provides base class to inherit from to load YAML configuration file to retrieve parameters.
 """
 
-from abc import ABC
 from typing import Optional
 
 from api_session import JSONDict
 from yaml import parser, safe_load
 
 
-class BaseConfig(ABC):
+class BaseConfig:
     """
     Provides function to retrieve fields from YAML configuration.
     It needs to be instantiated first to be loaded.
@@ -27,7 +26,13 @@ class BaseConfig(ABC):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance.path = path
-            cls._instance._load_config()
+
+            try:
+                cls._instance._load_config()
+            except (FileNotFoundError, parser.ParserError) as err:
+                cls._instance = None
+
+                raise err
 
         return cls._instance
 
