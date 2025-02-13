@@ -1,0 +1,12 @@
+[project]
+name = "bcn-rainfall-api-client"
+version = "1.0.0"
+description = "Client who serves routes from the Barcelona Rainfall API."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "api-session>=1.4.2",
+    "pre-commit>=4.1.0",
+    "pydantic>=2.10.6",
+    "pyyaml>=6.0.2",
+]
