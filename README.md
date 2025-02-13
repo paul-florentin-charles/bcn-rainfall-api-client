@@ -10,11 +10,14 @@ Client who serves routes from the Barcelona Rainfall API; it is recommended to u
 ## Usage
 
 ```python
-from client import APIClient
-from client.utils import APIClientSettings
+from bcn_rainfall_api_client import APIClient
+from bcn_rainfall_api_client.utils import APIClientSettings
 
-# With configuration in `config.yml`
+# With configuration file in default path `config.yml`
 api_clt = APIClient.from_config()
+
+# With configuration file in other path
+api_clt_with_path = APIClient.from_config(path="new/path/to/config.yml")
 
 # With your own configuration
 api_clt_with_cfg = APIClient.from_config(

@@ -5,7 +5,7 @@ Provides functions parsing the YAML Configuration file to retrieve parameters.
 from functools import cached_property
 from typing import Optional
 
-from client.utils import APIClientSettings, BaseConfig
+from bcn_rainfall_api_client.utils import APIClientSettings, BaseConfig
 
 
 class Config(BaseConfig):
@@ -17,7 +17,7 @@ class Config(BaseConfig):
 
     _instance: Optional["Config"] = None
 
-    def __new__(cls, *, path="config.yml"):
+    def __new__(cls, *, path: str):
         return super().__new__(cls, path=path)
 
     @cached_property

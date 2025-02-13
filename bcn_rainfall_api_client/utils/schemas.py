@@ -1,5 +1,5 @@
 """
-Provides a Pydantic model to initiate API client with a custom configuration.
+Provides a Pydantic model to initiate API bcn_rainfall_api_client with a custom configuration.
 """
 
 from pydantic import BaseModel

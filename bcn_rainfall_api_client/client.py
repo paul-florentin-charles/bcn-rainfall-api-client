@@ -1,19 +1,25 @@
 """
-API client built to interact with FastAPI application without needing the knowledge of the routes URLs.
+API bcn_rainfall_api_client built to interact with FastAPI application without needing the knowledge of the routes URLs.
 """
 
 from api_session import APISession, JSONDict
 
-from client.config import APIClientSettings
+from bcn_rainfall_api_client.config import APIClientSettings
 
 
 class APIClient(APISession):
     @classmethod
-    def from_config(cls, config_: APIClientSettings | None = None, **kwargs):
+    def from_config(
+        cls,
+        config_: APIClientSettings | None = None,
+        *,
+        path="config.yml",
+        **kwargs,
+    ):
         if config_ is None:
-            from client.config import Config
+            from bcn_rainfall_api_client.config import Config
 
-            config_ = Config().get_api_settings
+            config_ = Config(path=path).get_api_settings
 
         base_url = f"http://{config_.host}:{config_.port}{config_.root_path}"
 
