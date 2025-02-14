@@ -25,6 +25,8 @@ class APIClient(APISession):
 
         return cls(base_url, **kwargs)
 
+    # -- Rainfall metrics -- #
+
     def get_rainfall_average(
         self,
         *,
@@ -107,6 +109,8 @@ class APIClient(APISession):
             },
         )
 
+    # -- Year metrics -- #
+
     def get_years_below_normal(
         self,
         *,
@@ -151,6 +155,8 @@ class APIClient(APISession):
             },
         )
 
+    # -- CSV data -- #
+
     def get_rainfall_by_year_as_csv(
         self,
         time_mode: str,
@@ -169,6 +175,8 @@ class APIClient(APISession):
                 "season": season,
             },
         )
+
+    # -- Plotly graphics data -- #
 
     def get_rainfall_by_year_as_plotly_json(
         self,

@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bcn-rainfall-api-client"
-version = "1.0.2"
+version = "1.0.3"
 description = "Client who serves routes from the Barcelona Rainfall API."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "api-session>=1.4.2",
-    "pre-commit>=4.1.0",
-    "pydantic>=2.10.6",
-    "pyyaml>=6.0.2",
+    "api-session~=1.4.2",
+    "pre-commit~=4.0.1",
+    "pydantic~=2.8.2",
+    "pyyaml~=6.0.2",
 ]
 
 [tool.setuptools]

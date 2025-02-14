@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.0.3
+_14/02/2025_
+
+- Update `README.md`.
+- Reset dependencies version to working conditions to ensure compatibility.
+
 ### v1.0.2
 _13/02/2025_
 

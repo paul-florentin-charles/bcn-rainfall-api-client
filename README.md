@@ -30,3 +30,10 @@ data = api_clt.get_rainfall_average(time_mode="yearly", begin_year=1991, end_yea
 print(data)
 ...
 ```
+
+1. `time_mode` argument should be one of:
+   1. `["yearly", "seasonal", "monthly"]`
+2. `month` argument should be one of:
+   1. `["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]`
+3. `season` argument should be one of 
+   1. `["winter", "spring", "summer", "fall"]`
