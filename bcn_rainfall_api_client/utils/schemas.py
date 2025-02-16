@@ -1,13 +1,13 @@
 """
-Provides a Pydantic model to initiate API bcn_rainfall_api_client with a custom configuration.
+Provides the API server settings to initiate API client.
 """
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
-class APIClientSettings(BaseModel):
-    """Type definition for API Client settings."""
+class APIServerSettings(BaseModel):
+    """Type definition for API server settings."""
 
     host: str
     port: int
-    root_path: str
+    root_path: str | None = Field(None)

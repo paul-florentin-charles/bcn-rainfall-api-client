@@ -5,7 +5,7 @@ Provides functions parsing the YAML Configuration file to retrieve parameters.
 from functools import cached_property
 from typing import Optional
 
-from bcn_rainfall_api_client.utils import APIClientSettings, BaseConfig
+from bcn_rainfall_api_client.utils import APIServerSettings, BaseConfig
 
 
 class Config(BaseConfig):
@@ -21,7 +21,7 @@ class Config(BaseConfig):
         return super().__new__(cls, path=path)
 
     @cached_property
-    def get_api_settings(self) -> APIClientSettings:
+    def get_api_settings(self) -> APIServerSettings:
         """
         Return settings to build base API URL to communicate with using client.
 
@@ -34,4 +34,4 @@ class Config(BaseConfig):
 
         """
 
-        return APIClientSettings(**self.yaml_config["api"])
+        return APIServerSettings(**self.yaml_config["api"])

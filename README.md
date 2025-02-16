@@ -12,7 +12,7 @@ Client who serves routes from the Barcelona Rainfall API; it is recommended to u
 
 ```python
 from bcn_rainfall_api_client import APIClient
-from bcn_rainfall_api_client.utils import APIClientSettings
+from bcn_rainfall_api_client.utils import APIServerSettings
 
 # With configuration file in default path `config.yml`
 api_clt = APIClient.from_config()
@@ -22,7 +22,7 @@ api_clt_with_path = APIClient.from_config(path="new/path/to/config.yml")
 
 # With your own configuration
 api_clt_with_cfg = APIClient.from_config(
-    cfg=APIClientSettings(host="localhost", port=8080, root_path="/api")
+   cfg=APIServerSettings(host="localhost", port=8080, root_path="/api")
 )
 
 # Have fun with client!
@@ -31,9 +31,10 @@ print(data)
 ...
 ```
 
-1. `time_mode` argument should be one of:
-   1. `["yearly", "seasonal", "monthly"]`
-2. `month` argument should be one of:
-   1. `["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]`
-3. `season` argument should be one of 
-   1. `["winter", "spring", "summer", "fall"]`
+### About time-related parameters
+
+```python
+time_mode in ["yearly", "seasonal", "monthly"]
+month in ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+season in ["winter", "spring", "summer", "fall"]
+```

@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.0.4
+_16/02/2025_
+
+- Set some default values for `APIClient` instantiation.
+- Make `api.root_path` entry optional in configuration.
+
 ### v1.0.3
 _14/02/2025_
 

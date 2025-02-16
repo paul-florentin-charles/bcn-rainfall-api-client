@@ -4,14 +4,21 @@ API bcn_rainfall_api_client built to interact with FastAPI application without n
 
 from api_session import APISession, JSONDict
 
-from bcn_rainfall_api_client.config import APIClientSettings
+from bcn_rainfall_api_client.config import APIServerSettings
 
 
 class APIClient(APISession):
+    def __init__(self, base_url: str, **kwargs):
+        kwargs.setdefault("read_only", True)
+        kwargs.setdefault("timeout", 10)
+        kwargs.setdefault("max_retries", 3)
+
+        super().__init__(base_url, **kwargs)
+
     @classmethod
     def from_config(
         cls,
-        cfg: APIClientSettings | None = None,
+        cfg: APIServerSettings | None = None,
         *,
         path="config.yml",
         **kwargs,
@@ -21,9 +28,7 @@ class APIClient(APISession):
 
             cfg = Config(path=path).get_api_settings
 
-        base_url = f"http://{cfg.host}:{cfg.port}{cfg.root_path}"
-
-        return cls(base_url, **kwargs)
+        return cls(f"http://{cfg.host}:{cfg.port}{cfg.root_path or ''}", **kwargs)
 
     # -- Rainfall metrics -- #
 
