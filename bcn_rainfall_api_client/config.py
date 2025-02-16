@@ -21,17 +21,16 @@ class Config(BaseConfig):
         return super().__new__(cls, path=path)
 
     @cached_property
-    def get_api_settings(self) -> APIServerSettings:
+    def get_api_server_settings(self) -> APIServerSettings:
         """
-        Return settings to build base API URL to communicate with using client.
+        Return API server settings to communicate with using client.
 
         Example:
         {
-            "host": "127.0.0.1",
-            "port": 8000,
-            "root_path": "/api",
+            "api": {
+                "base_url": "http://127.0.0.1:8000/rest",
+            },
         }
-
         """
 
         return APIServerSettings(**self.yaml_config["api"])

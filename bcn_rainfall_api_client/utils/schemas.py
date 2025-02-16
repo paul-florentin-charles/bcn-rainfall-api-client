@@ -2,12 +2,10 @@
 Provides the API server settings to initiate API client.
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class APIServerSettings(BaseModel):
     """Type definition for API server settings."""
 
-    host: str
-    port: int
-    root_path: str | None = Field(None)
+    base_url: str

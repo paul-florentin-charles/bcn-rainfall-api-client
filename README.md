@@ -22,7 +22,7 @@ api_clt_with_path = APIClient.from_config(path="new/path/to/config.yml")
 
 # With your own configuration
 api_clt_with_cfg = APIClient.from_config(
-   cfg=APIServerSettings(host="localhost", port=8080, root_path="/api")
+   cfg=APIServerSettings(base_url="http://localhost:8080/api")
 )
 
 # Have fun with client!
@@ -34,7 +34,11 @@ print(data)
 ### About time-related parameters
 
 ```python
-time_mode in ["yearly", "seasonal", "monthly"]
-month in ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-season in ["winter", "spring", "summer", "fall"]
+time_mode = "monthly"
+month = "may"
+season = "winter"
+
+assert time_mode in ["yearly", "seasonal", "monthly"]
+assert month in ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+assert season in ["winter", "spring", "summer", "fall"]
 ```

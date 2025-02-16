@@ -4,7 +4,7 @@ API bcn_rainfall_api_client built to interact with FastAPI application without n
 
 from api_session import APISession, JSONDict
 
-from bcn_rainfall_api_client.config import APIServerSettings
+from bcn_rainfall_api_client.utils import APIServerSettings
 
 
 class APIClient(APISession):
@@ -26,9 +26,9 @@ class APIClient(APISession):
         if cfg is None:
             from bcn_rainfall_api_client.config import Config
 
-            cfg = Config(path=path).get_api_settings
+            cfg = Config(path=path).get_api_server_settings
 
-        return cls(f"http://{cfg.host}:{cfg.port}{cfg.root_path or ''}", **kwargs)
+        return cls(cfg.base_url, **kwargs)
 
     # -- Rainfall metrics -- #
 

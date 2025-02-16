@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.0.5
+_16/02/2025_
+
+- Simplify configuration and adapt subsequently `APIServerSettings` schema.
+
 ### v1.0.4
 _16/02/2025_
 
