@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.0.6
+_10/03/2025_
+
+- Remove configuration pattern since it is overkill to keep it for one line.
+  - Subsequently, remove class method `from_config`.
+
 ### v1.0.5
 _16/02/2025_
 

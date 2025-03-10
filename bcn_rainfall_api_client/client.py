@@ -1,34 +1,17 @@
 """
-API bcn_rainfall_api_client built to interact with FastAPI application without needing the knowledge of the routes URLs.
+API client built to interact with FastAPI application without needing the knowledge of the routes URLs.
 """
 
 from api_session import APISession, JSONDict
 
-from bcn_rainfall_api_client.utils import APIServerSettings
-
 
 class APIClient(APISession):
-    def __init__(self, base_url: str, **kwargs):
+    def __init__(self, *, base_url: str, **kwargs):
         kwargs.setdefault("read_only", True)
         kwargs.setdefault("timeout", 10)
         kwargs.setdefault("max_retries", 3)
 
         super().__init__(base_url, **kwargs)
-
-    @classmethod
-    def from_config(
-        cls,
-        cfg: APIServerSettings | None = None,
-        *,
-        path="config.yml",
-        **kwargs,
-    ):
-        if cfg is None:
-            from bcn_rainfall_api_client.config import Config
-
-            cfg = Config(path=path).get_api_server_settings
-
-        return cls(cfg.base_url, **kwargs)
 
     # -- Rainfall metrics -- #
 

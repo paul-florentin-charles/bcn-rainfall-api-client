@@ -6,27 +6,25 @@
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 
-Client who serves routes from the Barcelona Rainfall API; it is recommended to use it to retrieve rainfall data instead of directly calling the API code.
+Client who serves routes from the [Barcelona Rainfall API](https://github.com/paul-florentin-charles/bcn-rainfall-api); it is recommended to use it to retrieve rainfall data instead of directly calling the API code.
 
 ## Usage
 
 ```python
 from bcn_rainfall_api_client import APIClient
-from bcn_rainfall_api_client.utils import APIServerSettings
 
-# With configuration file in default path `config.yml`
-api_clt = APIClient.from_config()
+# You can replace base_url with your own instance URL if you have one running
+base_url = "https://bcn-rainfall-api.onrender.com/rest"
 
-# With configuration file in other path
-api_clt_with_path = APIClient.from_config(path="new/path/to/config.yml")
-
-# With your own configuration
-api_clt_with_cfg = APIClient.from_config(
-   cfg=APIServerSettings(base_url="http://localhost:8080/api")
-)
+# Instantiate client
+api_clt = APIClient(base_url=base_url)
 
 # Have fun with client!
-data = api_clt.get_rainfall_average(time_mode="yearly", begin_year=1991, end_year=2020)
+data = api_clt.get_rainfall_average(
+    time_mode="yearly",
+    begin_year=1991,
+    end_year=2020
+)
 print(data)
 ...
 ```

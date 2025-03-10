@@ -1,4 +1,0 @@
-# -- FastAPI server settings -- #
-
-api:
-  base_url: https://bcn-rainfall-api.onrender.com/rest
