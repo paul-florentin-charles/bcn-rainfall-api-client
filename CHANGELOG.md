@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.0.7
+_18/06/2025_
+
+- Update `get_rainfall_by_year_as_plotly_json` signature with optional integer `kmeans_cluster_count`.
+
 ### v1.0.6
 _10/03/2025_
 
