@@ -188,7 +188,7 @@ class APIClient(APISession):
                 "season": season,
                 "plot_average": plot_average,
                 "plot_linear_regression": plot_linear_regression,
-                "kmeans_cluster_count": kmeans_cluster_count
+                "kmeans_cluster_count": kmeans_cluster_count,
             },
         )
 
@@ -239,6 +239,24 @@ class APIClient(APISession):
                 "normal_year": normal_year,
                 "begin_year": begin_year,
                 "end_year": end_year,
+            },
+        )
+
+    def get_rainfall_standard_deviations_as_plotly_json(
+        self,
+        *,
+        time_mode: str,
+        begin_year: int,
+        end_year: int | None = None,
+        weigh_by_average=False,
+    ) -> str:
+        return self.get_json_api(
+            "/graph/standard_deviations",
+            params={
+                "time_mode": time_mode,
+                "begin_year": begin_year,
+                "end_year": end_year,
+                "weigh_by_average": weigh_by_average,
             },
         )
 

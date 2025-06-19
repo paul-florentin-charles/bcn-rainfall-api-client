@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.0.8
+_19/06/2025_
+
+- Add `get_rainfall_standard_deviations_as_plotly_json` method to client to map `graph/standard_deviations` route.
+
 ### v1.0.7
 _18/06/2025_
 
