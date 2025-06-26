@@ -269,6 +269,7 @@ class APIClient(APISession):
         end_year: int | None = None,
         month: str | None = None,
         season: str | None = None,
+        percentages_of_normal="0,80,120,inf",
     ):
         return self.get_json_api(
             "/graph/percentage_of_years_above_and_below_normal",
@@ -279,5 +280,6 @@ class APIClient(APISession):
                 "end_year": end_year,
                 "month": month,
                 "season": season,
+                "percentages_of_normal": percentages_of_normal,
             },
         )

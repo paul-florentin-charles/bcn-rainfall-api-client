@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.0.9
+_26/06/2025_
+
+- Add `percentages_of_normal` query param to `get_percentage_of_years_above_and_below_normal_as_plotly_json` method
+to map `/graph/percentage_of_years_above_and_below_normal` route.
+
 ### v1.0.8
 _19/06/2025_
 
