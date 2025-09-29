@@ -6,7 +6,7 @@
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 
-Client who serves routes from the [Barcelona Rainfall API](https://github.com/paul-florentin-charles/bcn-rainfall-api); it is recommended to use it to retrieve rainfall data instead of directly calling the API code.
+Client who serves routes from the [Barcelona Rainfall Webapp API](https://github.com/paul-florentin-charles/bcn-rainfall-webapp); it is recommended to use it to retrieve rainfall data instead of directly calling the API code.
 
 ## Usage
 
@@ -14,7 +14,7 @@ Client who serves routes from the [Barcelona Rainfall API](https://github.com/pa
 from bcn_rainfall_api_client import APIClient
 
 # You can replace base_url with your own instance URL if you have one running
-base_url = "https://bcn-rainfall-api.onrender.com/rest"
+base_url = "https://barnapluja.up.railway.app/rest"
 
 # Instantiate client
 api_clt = APIClient(base_url=base_url)
